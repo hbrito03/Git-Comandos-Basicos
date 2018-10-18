@@ -1,3 +1,9 @@
+
+//Por Davistro
+//David Antonio Castro Ardon.
+//Si conocen de mas comandos pueden agregarlos.
+
+
 Instalar Git:  sudo pacman -S git (En Arch y sus derivados)
 
 PARA AYUDA DE LOS COMANDOS: git help
@@ -27,7 +33,7 @@ Para crear mensajes en cada cambio y asi saber que cambio se hizo:  git commit -
 
 para ver los mensajes de cada cambio (se mostraran los commit):  git log
 
-para viajar entre los cambios (debido a un error u lo que sea):  git checkout 12499f9c4a9e1d9a07580c7392d9f356ae0d42f5 (esto es el ejemplo de un commit)
+para viajar entre los cambios (debido a un error u lo que sea):  git checkout 12499f9c4a9e1d9a07580c7392d9f356ae0d42f5 (esto es el ejemplo de un commit el que se desea ver)
 
 para estar en el ultimio cambio (COMMIT):	git chekout master
 
