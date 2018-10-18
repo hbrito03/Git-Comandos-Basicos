@@ -1,0 +1,93 @@
+Instalar Git:  sudo pacman -S git (En Arch y sus derivados)
+
+PARA AYUDA DE LOS COMANDOS: git help
+para salir: alt + q
+
+Poner nombre de usuario: git config --global user.name "AQUI EL NOMBRE"
+
+Para saber el nombre de usuario: git config --global user.name
+
+Para agregar el Email: git config --global user.email "AQUI EL EMAIL"
+
+Para agregar colores de aviso:  git config --global color.ui true
+
+Para ver la lista cambios de usuario: git config --global --list
+
+Luego debemos trabajar dentro del proyecto: cd Escritorio/ejemplo
+
+Para iniciar a trabajar con GIT (debemos estar dentro del proyecto): git init
+
+Para ver el estado del proyecto, cambios, etc...:  git status
+
+para agregar el cambio en especifico: git add nombre_del_cambio.jpg
+
+para agregar todos los cambios: git add -A
+
+Para crear mensajes en cada cambio y asi saber que cambio se hizo:  git commit -m "Añadimos la descripcion del cambio"
+
+para ver los mensajes de cada cambio (se mostraran los commit):  git log
+
+para viajar entre los cambios (debido a un error u lo que sea):  git checkout 12499f9c4a9e1d9a07580c7392d9f356ae0d42f5 (esto es el ejemplo de un commit)
+
+para estar en el ultimio cambio (COMMIT):	git chekout master
+
+Para borrar commit (para borrar en especifico, tambien nos abre una pantalla, donde estan todos los commits):		git log > commits.txt
+
+para borrar commit sin tocar el codigo:	
+1	git log	(para ver cual borraremos)
+2	(copiar el comimt: 12499f9c4a9e1d9a07580c7392d9f356ae0d42f5 (esto es el ejemplo de un commit) )
+3	una vez identificado 
+3.1 	lo borramos asi:	git reset --soft 12499f9c4a9e1d9a07580c7392d9f356ae0d42f5 (esto es el ejemplo de un commit)
+4	 hacer "git log" para comprobar el cambio y ver que el codigo sige igual
+
+Para borrar todo el commit incluyendo cambios en ese comit en especifico: git reset --hard 12499f9c4a9e1d9a07580c7392d9f356ae0d42f5 (esto es el ejemplo de un commit)
+
+-------------RAMAS----------
+
+para mostrar las ramas:   git branch
+
+como crear una rama:	git branch nombre_de_la_rama
+
+Para movernos y trabajar en otra rama:		git checkout nombre_de_la_rama
+
+funcionan para hacer un estilo de pruebas y que no afecte el master, pero si veremos
+que el cambio nos gusto y funciono lo fusionamos a la rama master(rama inicial)
+
+------------FUSIONES-------------
+
+para fusionar una con otra de las ramas:
+1	ubicarnos en la que queremos fusionar haciendo checkout
+1.1	git checkout master (nombre de la rama)
+2	git merge test (nombre de la rama que sera absorvid
+3	 si ponemos "git log" veremos que ya tenemos los mismos cambios de test (la otra rama
+	en test, que sera con la que fusionaremos)	
+
+luego solo si queremos podemos eliminar la rama despues de fusionarla:
+	git branch -D nombre_de_la_rama
+
+-----------GitHUb--------------
+
+clonar o descargar un repositorio debemos asignar la carpeta (cd Escritorio/Fescargas):	git clone enlace_hhtps
+
+Subir nuestro proyecto:
+1	Nuevo, luego darle el nombre, 
+2	vincular el ya creado en GitHUb con el proyecto local:
+2.1	git remote add origin copiar_y_pegar:elHTTPS_del_que_acabamos_de_crear
+3	para comprobar la conexion del proyecto local con el remoto:
+3.1	git remote -v
+4	para eliminar el proyecto remoto
+4.1	git remote remove origin 
+4.2	comprobar que se removio "git remote -v"
+5	Subir nuestros cambio y proyecto en general a GitHUb:
+5.1	git push origin Nombre_de_la_rama (sule ser la Master)
+5.2 	nos pedira usuario de github y la contraseña y comenzara a subirse nuestro repositorio
+
+ESTO SE DEBE HACER CADA CAMBIO
+
+	git push origin -f  Nombre_de_la_rama (sule ser la Master)
+	nos pedira usuario de github y la contraseña y comenzara a subirse nuestro repositorio
+	-f (hace fuerza para que se hagan los cambios)
+
+//Por Davistro
+//David Antonio Castro Ardon.
+//Si conocen de mas comandos pueden agregarlos.
